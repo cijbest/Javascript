@@ -1,0 +1,20 @@
+body{
+  background-color: bisque;
+}
+
+h1{
+  color: #2980b9;
+  transition: color 0.5s ease-in-out; /* 천천히 바뀌는 것 */
+}
+/*
+#title{
+  color: blue;
+}*/
+
+.btn{
+    cursor: pointer;
+}
+
+.clicked{
+    color: #f1c40f;
+}
