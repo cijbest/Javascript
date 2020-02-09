@@ -8,6 +8,17 @@ const TODOS_LS = 'toDos';
 
 let toDos = []; // 할 일을 배열에 저장
 
+function checkeToDo(event){
+    const btn = event.target;
+    const span = btn.nextSibling;
+    if(span.classList.contains("checkedList")){
+        btn.innerHTML = "&#9744";
+        span.classList.remove("checkedList");
+    } else {
+        btn.innerHTML = "&#9746";
+        span.classList.add("checkedList");
+    }
+}
 function deleteToDo(event){
     const btn = event.target;
     const li = btn.parentNode;
@@ -29,13 +40,18 @@ function saveToDos(){  // toDos를 가지고 와서 로컬에 입력한다.
 
 function paintToDo(text){
     const li = document.createElement("li"); // li 요소를 만들고 li라는 변수에 넣는다.
+    const chkBtn = document.createElement("button");
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
     const newId = toDos.length + 1;
+    chkBtn.innerHTML = "&#9744";
+    chkBtn.classList.add("vBtn");
+    chkBtn.addEventListener("click", checkeToDo);
     delBtn.innerHTML = "&#10004";
     delBtn.classList.add("xBtn");
     delBtn.addEventListener("click", deleteToDo);
-    span.innerHTML = `&#9744 &nbsp ${text}`;
+    span.innerHTML = `&nbsp ${text}`;
+    li.appendChild(chkBtn);
     li.appendChild(span);
     li.appendChild(delBtn);
     li.id = newId;

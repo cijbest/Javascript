@@ -93,14 +93,10 @@ ul{
   margin: 50px;
 }
 
-.notCheckedBtn{
+.vBtn{
   all: unset;
 }
 
-.checkedToDo{
-  background: "&#9746" ;
-}
-
-.checkedToDoLi span{
+.checkedList{
   text-decoration: line-through;
 }
